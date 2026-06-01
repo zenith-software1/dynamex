@@ -82,8 +82,8 @@ export function Footer() {
                 <Mail className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="text-xs text-muted-foreground uppercase tracking-wider mb-0.5">Email Ventas</p>
-                  <a href="mailto:ventas@Dynamex.mx" className="text-sm text-primary hover:text-primary/80 transition-colors font-medium">
-                    ventas@Dynamex.mx
+                  <a href="mailto:ventas@dynamex.mx" className="text-sm text-primary hover:text-primary/80 transition-colors font-medium">
+                    ventas@dynamex.mx
                   </a>
                 </div>
               </li>

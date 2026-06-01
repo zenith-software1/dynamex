@@ -260,8 +260,8 @@ export function Regions() {
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg">
                 <Mail className="w-3.5 h-3.5 text-primary" />
-                <a href="mailto:cr@Dynamex.mx" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
-                  cr@Dynamex.mx
+                <a href="mailto:cr@dynamex.mx" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+                  cr@dynamex.mx
                 </a>
               </div>
             </div>
@@ -344,7 +344,7 @@ export function Regions() {
                 <Link href="/distribuidor">Aplicar como Distribuidor</Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="border-white/20 py-6 px-10">
-                <a href="mailto:ventas@Dynamex.mx">ventas@Dynamex.mx</a>
+                <a href="mailto:ventas@dynamex.mx">ventas@dynamex.mx</a>
               </Button>
             </div>
           </motion.div>

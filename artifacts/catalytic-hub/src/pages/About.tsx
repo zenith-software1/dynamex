@@ -108,8 +108,8 @@ export function About() {
                 <Phone className="w-4 h-4 text-primary" /> +52 55 2178 7771
               </a>
               <span className="text-white/20">|</span>
-              <a href="mailto:ventas@Dynamex.mx" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm">
-                <Mail className="w-4 h-4 text-primary" /> ventas@Dynamex.mx
+              <a href="mailto:ventas@dynamex.mx" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm">
+                <Mail className="w-4 h-4 text-primary" /> ventas@dynamex.mx
               </a>
             </div>
           </motion.div>
@@ -328,8 +328,8 @@ export function About() {
                     <Mail className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                     <div>
                       <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Correo corporativo</p>
-                      <a href="mailto:ventas@Dynamex.mx" className="font-medium text-primary hover:text-primary/80 transition-colors">
-                        ventas@Dynamex.mx
+                      <a href="mailto:ventas@dynamex.mx" className="font-medium text-primary hover:text-primary/80 transition-colors">
+                        ventas@dynamex.mx
                       </a>
                       <p className="text-xs text-muted-foreground mt-1">Respuesta en menos de 4 horas hábiles</p>
                     </div>

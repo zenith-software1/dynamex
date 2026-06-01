@@ -181,7 +181,7 @@ export function Distributor() {
             </p>
             <p className="text-sm text-muted-foreground/70 mb-10">
               También puedes escribirnos directamente a{" "}
-              <a href="mailto:ventas@Dynamex.mx" className="text-primary hover:underline">ventas@Dynamex.mx</a>
+              <a href="mailto:ventas@dynamex.mx" className="text-primary hover:underline">ventas@dynamex.mx</a>
               {" "}o llamar al{" "}
               <a href="tel:+525521787771" className="text-primary hover:underline">+52 55 2178 7771</a>.
             </p>
@@ -259,13 +259,13 @@ export function Distributor() {
                       <p className="font-bold text-white group-hover:text-primary transition-colors">+52 55 2178 7771</p>
                     </div>
                   </a>
-                  <a href="mailto:ventas@Dynamex.mx" className="flex items-center gap-3 group">
+                  <a href="mailto:ventas@dynamex.mx" className="flex items-center gap-3 group">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                       <Mail className="w-5 h-5 text-primary" />
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground uppercase tracking-wider">Email corporativo</p>
-                      <p className="font-medium text-primary">ventas@Dynamex.mx</p>
+                      <p className="font-medium text-primary">ventas@dynamex.mx</p>
                     </div>
                   </a>
                   <a
@@ -509,7 +509,7 @@ export function Distributor() {
                         {mutation.isError && (
                           <div className="flex items-center gap-2 p-4 bg-destructive/10 border border-destructive/30 rounded-md text-sm text-destructive">
                             <AlertCircle className="w-4 h-4 shrink-0" />
-                            Error al enviar la solicitud. Por favor intenta de nuevo o escríbenos a ventas@Dynamex.mx
+                            Error al enviar la solicitud. Por favor intenta de nuevo o escríbenos a ventas@dynamex.mx
                           </div>
                         )}
 
@@ -553,7 +553,7 @@ export function Distributor() {
             {/* Bottom CTA links */}
             <div className="mt-6 text-center text-sm text-muted-foreground">
               ¿Tienes dudas? Escríbenos a{" "}
-              <a href="mailto:ventas@Dynamex.mx" className="text-primary hover:underline">ventas@Dynamex.mx</a>
+              <a href="mailto:ventas@dynamex.mx" className="text-primary hover:underline">ventas@dynamex.mx</a>
               {" "}o llama al{" "}
               <a href="tel:+525521787771" className="text-primary hover:underline">+52 55 2178 7771</a>
             </div>

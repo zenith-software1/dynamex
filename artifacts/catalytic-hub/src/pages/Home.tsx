@@ -16,7 +16,7 @@ const SUPPORTED_COUNTRIES = [
     code: "MX",
     name: "México",
     phone: "+52 55 2178 7771",
-    email: "ventas@Dynamex.mx",
+    email: "ventas@dynamex.mx",
     time: "24 hrs",
     address: "Santa Lucía Milpa Alta, CDMX / Tlalnepantla, Edo. Méx.",
     whatsapp: "525521787771",
@@ -25,7 +25,7 @@ const SUPPORTED_COUNTRIES = [
     code: "CR",
     name: "Costa Rica",
     phone: "+506 8800 2090",
-    email: "cr@Dynamex.mx",
+    email: "cr@dynamex.mx",
     time: "24–48 hrs",
     address: "Zona Franca Coyol, Alajuela, Costa Rica",
     whatsapp: "50688002090",
@@ -34,7 +34,7 @@ const SUPPORTED_COUNTRIES = [
     code: "CO",
     name: "Colombia",
     phone: "+57 310 555 0192",
-    email: "colombia@Dynamex.mx",
+    email: "colombia@dynamex.mx",
     time: "3–5 días hábiles",
     address: "Bogotá D.C., Colombia",
     whatsapp: "573105550192",
@@ -43,7 +43,7 @@ const SUPPORTED_COUNTRIES = [
     code: "EC",
     name: "Ecuador",
     phone: "+593 99 555 0174",
-    email: "ecuador@Dynamex.mx",
+    email: "ecuador@dynamex.mx",
     time: "3–5 días hábiles",
     address: "Quito, Pichincha, Ecuador",
     whatsapp: "593995550174",
@@ -52,7 +52,7 @@ const SUPPORTED_COUNTRIES = [
     code: "GT",
     name: "Centroamérica",
     phone: "+502 5555 0133",
-    email: "centroamerica@Dynamex.mx",
+    email: "centroamerica@dynamex.mx",
     time: "2–4 días hábiles",
     address: "Ciudad de Guatemala / Costa Rica (hub regional)",
     whatsapp: "50255550133",
@@ -182,10 +182,10 @@ export function Home() {
               </a>
               <span className="text-white/30">|</span>
               <a
-                href="mailto:ventas@Dynamex.mx"
+                href="mailto:ventas@dynamex.mx"
                 className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors text-sm"
               >
-                <Mail className="w-4 h-4" /> ventas@Dynamex.mx
+                <Mail className="w-4 h-4" /> ventas@dynamex.mx
               </a>
             </motion.div>
 
@@ -520,13 +520,13 @@ export function Home() {
                       <p className="font-bold text-lg text-white group-hover:text-primary transition-colors">+52 55 2178 7771</p>
                     </div>
                   </a>
-                  <a href="mailto:ventas@Dynamex.mx" className="flex items-center gap-3 group">
+                  <a href="mailto:ventas@dynamex.mx" className="flex items-center gap-3 group">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                       <Mail className="w-5 h-5 text-primary" />
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground uppercase tracking-wider">Email Corporativo</p>
-                      <p className="font-medium text-primary group-hover:text-primary/80 transition-colors">ventas@Dynamex.mx</p>
+                      <p className="font-medium text-primary group-hover:text-primary/80 transition-colors">ventas@dynamex.mx</p>
                     </div>
                   </a>
                 </div>
