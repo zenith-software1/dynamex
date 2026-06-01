@@ -1,14 +1,13 @@
 // [Zenith Safe-Code Protocol Active]
 import { Router } from "express";
-import { eq } from "drizzle-orm";
-import { db, regionsTable } from "@workspace/db";
+import { listRegions, getRegionByCode } from "@workspace/db";
 import { GetRegionParams } from "@workspace/api-zod";
 
 const router = Router();
 
 router.get("/", async (req, res) => {
   try {
-    const rows = await db.select().from(regionsTable);
+    const rows = await listRegions();
     res.json(rows);
   } catch (err) {
     req.log.error({ err }, "Error listing regions");
@@ -24,10 +23,7 @@ router.get("/:code", async (req, res) => {
       return;
     }
 
-    const [row] = await db
-      .select()
-      .from(regionsTable)
-      .where(eq(regionsTable.code, params.data.code));
+    const row = await getRegionByCode(params.data.code);
 
     if (!row) {
       res.status(404).json({ error: "Region not found" });

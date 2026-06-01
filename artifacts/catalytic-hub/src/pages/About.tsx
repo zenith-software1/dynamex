@@ -17,7 +17,7 @@ const CERTIFICATIONS = [
 ];
 
 const MILESTONES = [
-  { year: "2007", event: "Fundación de Daynamex en Santa Lucía Milpa Alta, Ciudad de México. Primeros 3 ingenieros especializados en catálisis automotriz." },
+  { year: "2007", event: "Fundación de Dynamex en Santa Lucía Milpa Alta, Ciudad de México. Primeros 3 ingenieros especializados en catálisis automotriz." },
   { year: "2010", event: "Apertura de planta de producción en Tlalnepantla, Estado de México. Capacidad inicial de 1,500 unidades mensuales." },
   { year: "2013", event: "Primera exportación a Centroamérica. Red de 40 distribuidores en Guatemala, El Salvador y Costa Rica." },
   { year: "2016", event: "Obtención de certificación ISO 9001. Instalación de línea de producción robotizada. Capacidad aumenta a 6,000 unidades mensuales." },
@@ -25,7 +25,7 @@ const MILESTONES = [
   { year: "2020", event: "Resistencia a la pandemia: operación continua como industria esencial. Conversión de producción parcial a kits de reparación para talleres." },
   { year: "2022", event: "Lanzamiento de la línea Premium Euro 6 para vehículos de importación europeos. Certificación EPA completada." },
   { year: "2023", event: "Construcción de hub regional en Zona Franca Coyol, Alajuela, Costa Rica. Inicio de operaciones Colombia y Ecuador." },
-  { year: "2024", event: "Apertura oficial del hub Daynamex Centroamérica. 200+ SKUs en catálogo, 500+ distribuidores activos en la red." },
+  { year: "2024", event: "Apertura oficial del hub Dynamex Centroamérica. 200+ SKUs en catálogo, 500+ distribuidores activos en la red." },
   { year: "2025", event: "Expansión de capacidad a 12,000 unidades/mes. Lanzamiento de programa de crédito para distribuidores mayoristas." },
 ];
 
@@ -63,7 +63,7 @@ const CAPABILITIES = [
   {
     icon: Users,
     title: "Red de Distribuidores",
-    description: "500+ distribuidores activos en 5 países con programa de soporte, capacitación y materiales de punto de venta. Comunidad Daynamex con reuniones trimestrales.",
+    description: "500+ distribuidores activos en 5 países con programa de soporte, capacitación y materiales de punto de venta. Comunidad Dynamex con reuniones trimestrales.",
   },
   {
     icon: Zap,
@@ -73,9 +73,9 @@ const CAPABILITIES = [
 ];
 
 const FACEBOOK_PAGES = [
-  { label: "Daynamex Santa Lucía CDMX", url: "https://www.facebook.com/share/1EUhB1Vj8q/" },
-  { label: "Daynamex Tlalnepantla", url: "https://www.facebook.com/share/1AN2qzLNWe/" },
-  { label: "Daynamex México Oficial", url: "https://www.facebook.com/share/18b8NmqeMx/" },
+  { label: "Dynamex Santa Lucía CDMX", url: "https://www.facebook.com/share/1EUhB1Vj8q/" },
+  { label: "Dynamex Tlalnepantla", url: "https://www.facebook.com/share/1AN2qzLNWe/" },
+  { label: "Dynamex México Oficial", url: "https://www.facebook.com/share/18b8NmqeMx/" },
 ];
 
 const NUMBERS = [
@@ -95,7 +95,7 @@ export function About() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(32_98%_50%_/_0.08),_transparent_60%)]" />
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="text-primary text-sm font-bold uppercase tracking-widest mb-3">Sobre Daynamex</p>
+            <p className="text-primary text-sm font-bold uppercase tracking-widest mb-3">Sobre Dynamex</p>
             <h1 className="text-5xl md:text-7xl font-display font-bold uppercase mb-6 leading-tight">
               Fabricamos con<br />
               <span className="text-primary">Precisión Mexicana.</span>
@@ -108,8 +108,8 @@ export function About() {
                 <Phone className="w-4 h-4 text-primary" /> +52 55 2178 7771
               </a>
               <span className="text-white/20">|</span>
-              <a href="mailto:ventas@daynamex.mx" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm">
-                <Mail className="w-4 h-4 text-primary" /> ventas@daynamex.mx
+              <a href="mailto:ventas@Dynamex.mx" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm">
+                <Mail className="w-4 h-4 text-primary" /> ventas@Dynamex.mx
               </a>
             </div>
           </motion.div>
@@ -250,7 +250,7 @@ export function About() {
             <p className="text-primary text-xs font-bold uppercase tracking-widest mb-3">Normativas</p>
             <h2 className="text-4xl font-display font-bold uppercase mb-4">Certificaciones Vigentes</h2>
             <p className="text-muted-foreground max-w-2xl">
-              Cada producto de la línea Daynamex cumple con las normativas ambientales internacionales más exigentes. Documentación disponible bajo solicitud para distribuidores.
+              Cada producto de la línea Dynamex cumple con las normativas ambientales internacionales más exigentes. Documentación disponible bajo solicitud para distribuidores.
             </p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -296,7 +296,7 @@ export function About() {
                     </div>
                     <div>
                       <p className="font-medium text-sm text-white">{page.label}</p>
-                      <p className="text-xs text-muted-foreground">Facebook — Daynamex</p>
+                      <p className="text-xs text-muted-foreground">Facebook — Dynamex</p>
                     </div>
                     <ExternalLink className="w-4 h-4 text-muted-foreground ml-auto opacity-40 group-hover:opacity-80" />
                   </a>
@@ -328,8 +328,8 @@ export function About() {
                     <Mail className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                     <div>
                       <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Correo corporativo</p>
-                      <a href="mailto:ventas@daynamex.mx" className="font-medium text-primary hover:text-primary/80 transition-colors">
-                        ventas@daynamex.mx
+                      <a href="mailto:ventas@Dynamex.mx" className="font-medium text-primary hover:text-primary/80 transition-colors">
+                        ventas@Dynamex.mx
                       </a>
                       <p className="text-xs text-muted-foreground mt-1">Respuesta en menos de 4 horas hábiles</p>
                     </div>

@@ -16,7 +16,7 @@ const SUPPORTED_COUNTRIES = [
     code: "MX",
     name: "México",
     phone: "+52 55 2178 7771",
-    email: "ventas@daynamex.mx",
+    email: "ventas@Dynamex.mx",
     time: "24 hrs",
     address: "Santa Lucía Milpa Alta, CDMX / Tlalnepantla, Edo. Méx.",
     whatsapp: "525521787771",
@@ -25,7 +25,7 @@ const SUPPORTED_COUNTRIES = [
     code: "CR",
     name: "Costa Rica",
     phone: "+506 8800 2090",
-    email: "cr@daynamex.mx",
+    email: "cr@Dynamex.mx",
     time: "24–48 hrs",
     address: "Zona Franca Coyol, Alajuela, Costa Rica",
     whatsapp: "50688002090",
@@ -34,7 +34,7 @@ const SUPPORTED_COUNTRIES = [
     code: "CO",
     name: "Colombia",
     phone: "+57 310 555 0192",
-    email: "colombia@daynamex.mx",
+    email: "colombia@Dynamex.mx",
     time: "3–5 días hábiles",
     address: "Bogotá D.C., Colombia",
     whatsapp: "573105550192",
@@ -43,7 +43,7 @@ const SUPPORTED_COUNTRIES = [
     code: "EC",
     name: "Ecuador",
     phone: "+593 99 555 0174",
-    email: "ecuador@daynamex.mx",
+    email: "ecuador@Dynamex.mx",
     time: "3–5 días hábiles",
     address: "Quito, Pichincha, Ecuador",
     whatsapp: "593995550174",
@@ -52,7 +52,7 @@ const SUPPORTED_COUNTRIES = [
     code: "GT",
     name: "Centroamérica",
     phone: "+502 5555 0133",
-    email: "centroamerica@daynamex.mx",
+    email: "centroamerica@Dynamex.mx",
     time: "2–4 días hábiles",
     address: "Ciudad de Guatemala / Costa Rica (hub regional)",
     whatsapp: "50255550133",
@@ -97,7 +97,7 @@ const BENEFITS = [
   {
     icon: Wrench,
     title: "Capacitación sin Costo",
-    desc: "Talleres y cursos de instalación gratuitos para el equipo técnico de tu negocio. Certificación Daynamex disponible.",
+    desc: "Talleres y cursos de instalación gratuitos para el equipo técnico de tu negocio. Certificación Dynamex disponible.",
   },
 ];
 
@@ -109,9 +109,9 @@ const PROCESS_STEPS = [
 ];
 
 const FACEBOOK_PAGES = [
-  { label: "Daynamex Santa Lucía CDMX", url: "https://www.facebook.com/share/1EUhB1Vj8q/" },
-  { label: "Daynamex Tlalnepantla", url: "https://www.facebook.com/share/1AN2qzLNWe/" },
-  { label: "Daynamex México Oficial", url: "https://www.facebook.com/share/18b8NmqeMx/" },
+  { label: "Dynamex Santa Lucía CDMX", url: "https://www.facebook.com/share/1EUhB1Vj8q/" },
+  { label: "Dynamex Tlalnepantla", url: "https://www.facebook.com/share/1AN2qzLNWe/" },
+  { label: "Dynamex México Oficial", url: "https://www.facebook.com/share/18b8NmqeMx/" },
 ];
 
 const FLAG_EMOJI: Record<string, string> = {
@@ -165,7 +165,7 @@ export function Home() {
               transition={{ delay: 0.35 }}
               className="text-xl md:text-2xl text-gray-300 max-w-2xl mb-4 leading-relaxed"
             >
-              Daynamex es el fabricante líder de convertidores catalíticos y sistemas de escape en México. Calidad de exportación para la industria automotriz en Centro y Sudamérica.
+              Dynamex es el fabricante líder de convertidores catalíticos y sistemas de escape en México. Calidad de exportación para la industria automotriz en Centro y Sudamérica.
             </motion.p>
 
             <motion.div
@@ -182,10 +182,10 @@ export function Home() {
               </a>
               <span className="text-white/30">|</span>
               <a
-                href="mailto:ventas@daynamex.mx"
+                href="mailto:ventas@Dynamex.mx"
                 className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors text-sm"
               >
-                <Mail className="w-4 h-4" /> ventas@daynamex.mx
+                <Mail className="w-4 h-4" /> ventas@Dynamex.mx
               </a>
             </motion.div>
 
@@ -410,7 +410,7 @@ export function Home() {
             className="text-center mb-16"
           >
             <p className="text-primary text-xs font-bold uppercase tracking-widest mb-3">Por qué elegirnos</p>
-            <h2 className="text-4xl md:text-5xl font-display font-bold uppercase mb-4">Ventajas Daynamex</h2>
+            <h2 className="text-4xl md:text-5xl font-display font-bold uppercase mb-4">Ventajas Dynamex</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               No solo fabricamos. Construimos asociaciones comerciales de largo plazo con distribuidores mayoristas en toda la región.
             </p>
@@ -520,13 +520,13 @@ export function Home() {
                       <p className="font-bold text-lg text-white group-hover:text-primary transition-colors">+52 55 2178 7771</p>
                     </div>
                   </a>
-                  <a href="mailto:ventas@daynamex.mx" className="flex items-center gap-3 group">
+                  <a href="mailto:ventas@Dynamex.mx" className="flex items-center gap-3 group">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                       <Mail className="w-5 h-5 text-primary" />
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground uppercase tracking-wider">Email Corporativo</p>
-                      <p className="font-medium text-primary group-hover:text-primary/80 transition-colors">ventas@daynamex.mx</p>
+                      <p className="font-medium text-primary group-hover:text-primary/80 transition-colors">ventas@Dynamex.mx</p>
                     </div>
                   </a>
                 </div>

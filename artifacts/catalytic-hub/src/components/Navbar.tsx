@@ -34,7 +34,7 @@ export function Navbar() {
             D
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="font-display font-bold text-xl tracking-tight text-white">Daynamex</span>
+            <span className="font-display font-bold text-xl tracking-tight text-white">Dynamex</span>
             <span className="text-[9px] tracking-[0.2em] text-muted-foreground uppercase font-medium hidden sm:block">Convertidores &amp; Escape</span>
           </div>
         </Link>

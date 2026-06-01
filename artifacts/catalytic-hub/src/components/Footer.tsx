@@ -2,9 +2,9 @@ import { Link } from "wouter";
 import { Phone, Mail, MapPin, Facebook, ExternalLink } from "lucide-react";
 
 const FACEBOOK_PAGES = [
-  { label: "Daynamex Santa Lucía CDMX", url: "https://www.facebook.com/share/1EUhB1Vj8q/" },
-  { label: "Daynamex Tlalnepantla", url: "https://www.facebook.com/share/1AN2qzLNWe/" },
-  { label: "Daynamex México Oficial", url: "https://www.facebook.com/share/18b8NmqeMx/" },
+  { label: "Dynamex Santa Lucía CDMX", url: "https://www.facebook.com/share/1EUhB1Vj8q/" },
+  { label: "Dynamex Tlalnepantla", url: "https://www.facebook.com/share/1AN2qzLNWe/" },
+  { label: "Dynamex México Oficial", url: "https://www.facebook.com/share/18b8NmqeMx/" },
 ];
 
 export function Footer() {
@@ -19,7 +19,7 @@ export function Footer() {
                 D
               </div>
               <div className="flex flex-col leading-tight">
-                <span className="font-display font-bold text-2xl tracking-tight text-white">Daynamex</span>
+                <span className="font-display font-bold text-2xl tracking-tight text-white">Dynamex</span>
                 <span className="text-[9px] tracking-[0.2em] text-muted-foreground uppercase font-medium">Convertidores &amp; Escape</span>
               </div>
             </Link>
@@ -82,8 +82,8 @@ export function Footer() {
                 <Mail className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="text-xs text-muted-foreground uppercase tracking-wider mb-0.5">Email Ventas</p>
-                  <a href="mailto:ventas@daynamex.mx" className="text-sm text-primary hover:text-primary/80 transition-colors font-medium">
-                    ventas@daynamex.mx
+                  <a href="mailto:ventas@Dynamex.mx" className="text-sm text-primary hover:text-primary/80 transition-colors font-medium">
+                    ventas@Dynamex.mx
                   </a>
                 </div>
               </li>
@@ -114,7 +114,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-            <p>&copy; {new Date().getFullYear()} Daynamex. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} Dynamex. Todos los derechos reservados.</p>
             <span className="hidden md:block text-white/20">|</span>
             <p className="text-xs">Fabricación de calidad de exportación desde México.</p>
           </div>

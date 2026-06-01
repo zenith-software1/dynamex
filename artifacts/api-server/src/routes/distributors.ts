@@ -1,7 +1,11 @@
 // [Zenith Safe-Code Protocol Active]
 import { Router } from "express";
-import { eq } from "drizzle-orm";
-import { db, distributorsTable } from "@workspace/db";
+import {
+  listDistributors,
+  createDistributor,
+  getDistributor,
+  updateDistributorStatus,
+} from "@workspace/db";
 import {
   CreateDistributorBody,
   ListDistributorsQueryParams,
@@ -20,7 +24,7 @@ router.get("/", async (req, res) => {
       return;
     }
 
-    let rows = await db.select().from(distributorsTable);
+    let rows = await listDistributors();
 
     if (query.data.status) {
       rows = rows.filter((r) => r.status === query.data.status);
@@ -49,34 +53,18 @@ router.post("/", async (req, res) => {
       return;
     }
 
-    const {
-      companyName,
-      contactName,
-      email,
-      phone,
-      country,
-      city,
-      businessType,
-      estimatedMonthlyVolume,
-      taxId,
-      message,
-    } = body.data;
-
-    const [inserted] = await db
-      .insert(distributorsTable)
-      .values({
-        companyName,
-        contactName,
-        email,
-        phone,
-        country,
-        city,
-        businessType,
-        estimatedMonthlyVolume,
-        taxId: taxId ?? null,
-        message: message ?? null,
-      })
-      .returning();
+    const inserted = await createDistributor({
+      companyName: body.data.companyName,
+      contactName: body.data.contactName,
+      email: body.data.email,
+      phone: body.data.phone,
+      country: body.data.country,
+      city: body.data.city,
+      businessType: body.data.businessType,
+      estimatedMonthlyVolume: body.data.estimatedMonthlyVolume,
+      taxId: body.data.taxId ?? null,
+      message: body.data.message ?? null,
+    });
 
     res.status(201).json({
       ...inserted,
@@ -90,7 +78,7 @@ router.post("/", async (req, res) => {
 
 router.get("/stats", async (req, res) => {
   try {
-    const rows = await db.select().from(distributorsTable);
+    const rows = await listDistributors();
 
     const total = rows.length;
     const pending = rows.filter((r) => r.status === "pending").length;
@@ -121,10 +109,7 @@ router.get("/:id", async (req, res) => {
       return;
     }
 
-    const [row] = await db
-      .select()
-      .from(distributorsTable)
-      .where(eq(distributorsTable.id, params.data.id));
+    const row = await getDistributor(params.data.id);
 
     if (!row) {
       res.status(404).json({ error: "Distributor not found" });
@@ -152,11 +137,10 @@ router.patch("/:id", async (req, res) => {
       return;
     }
 
-    const [updated] = await db
-      .update(distributorsTable)
-      .set({ status: body.data.status })
-      .where(eq(distributorsTable.id, params.data.id))
-      .returning();
+    const updated = await updateDistributorStatus(
+      params.data.id,
+      body.data.status,
+    );
 
     if (!updated) {
       res.status(404).json({ error: "Distributor not found" });

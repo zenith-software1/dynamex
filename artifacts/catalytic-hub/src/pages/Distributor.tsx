@@ -52,13 +52,13 @@ const BENEFITS = [
   { icon: HeadphonesIcon, title: "Soporte técnico", desc: "Asesoría directa de nuestros ingenieros especializados." },
   { icon: BarChart3, title: "Precios mayoristas", desc: "Márgenes de hasta 40% para volúmenes calificados." },
   { icon: Award, title: "Garantía 2 años", desc: "Reposición directa sin costo por defecto de fabricación." },
-  { icon: Wrench, title: "Capacitación gratis", desc: "Talleres de instalación y certificación Daynamex." },
+  { icon: Wrench, title: "Capacitación gratis", desc: "Talleres de instalación y certificación Dynamex." },
 ];
 
 const FACEBOOK_PAGES = [
-  { label: "Daynamex Santa Lucía CDMX", url: "https://www.facebook.com/share/1EUhB1Vj8q/" },
-  { label: "Daynamex Tlalnepantla", url: "https://www.facebook.com/share/1AN2qzLNWe/" },
-  { label: "Daynamex México Oficial", url: "https://www.facebook.com/share/18b8NmqeMx/" },
+  { label: "Dynamex Santa Lucía CDMX", url: "https://www.facebook.com/share/1EUhB1Vj8q/" },
+  { label: "Dynamex Tlalnepantla", url: "https://www.facebook.com/share/1AN2qzLNWe/" },
+  { label: "Dynamex México Oficial", url: "https://www.facebook.com/share/18b8NmqeMx/" },
 ];
 
 const step1Schema = z.object({
@@ -174,14 +174,14 @@ export function Distributor() {
             </div>
             <h2 className="text-4xl font-display font-bold mb-4">Solicitud Enviada</h2>
             <p className="text-muted-foreground text-lg mb-4 leading-relaxed">
-              Hemos recibido la solicitud de <span className="text-white font-medium">{submittedCompany}</span>. Nuestro equipo comercial Daynamex revisará tu perfil y se pondrá en contacto en un plazo de 24–48 horas hábiles.
+              Hemos recibido la solicitud de <span className="text-white font-medium">{submittedCompany}</span>. Nuestro equipo comercial Dynamex revisará tu perfil y se pondrá en contacto en un plazo de 24–48 horas hábiles.
             </p>
             <p className="text-sm text-muted-foreground/70 mb-3">
               Revisa tu bandeja de entrada (y spam) para la confirmación.
             </p>
             <p className="text-sm text-muted-foreground/70 mb-10">
               También puedes escribirnos directamente a{" "}
-              <a href="mailto:ventas@daynamex.mx" className="text-primary hover:underline">ventas@daynamex.mx</a>
+              <a href="mailto:ventas@Dynamex.mx" className="text-primary hover:underline">ventas@Dynamex.mx</a>
               {" "}o llamar al{" "}
               <a href="tel:+525521787771" className="text-primary hover:underline">+52 55 2178 7771</a>.
             </p>
@@ -201,13 +201,13 @@ export function Distributor() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
-              <p className="text-primary text-sm font-bold uppercase tracking-widest mb-3">Portal B2B — Daynamex</p>
+              <p className="text-primary text-sm font-bold uppercase tracking-widest mb-3">Portal B2B — Dynamex</p>
               <h1 className="text-5xl md:text-6xl font-display font-bold uppercase mb-6">
                 Aplica para ser<br />
                 <span className="text-primary">Distribuidor</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-xl mb-6">
-                Forma parte de la red de distribución mayorista Daynamex en México, Centroamérica, Colombia y Ecuador. Llena el formulario y nuestro equipo te contacta en menos de 48 horas.
+                Forma parte de la red de distribución mayorista Dynamex en México, Centroamérica, Colombia y Ecuador. Llena el formulario y nuestro equipo te contacta en menos de 48 horas.
               </p>
 
               {stats && (
@@ -259,13 +259,13 @@ export function Distributor() {
                       <p className="font-bold text-white group-hover:text-primary transition-colors">+52 55 2178 7771</p>
                     </div>
                   </a>
-                  <a href="mailto:ventas@daynamex.mx" className="flex items-center gap-3 group">
+                  <a href="mailto:ventas@Dynamex.mx" className="flex items-center gap-3 group">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                       <Mail className="w-5 h-5 text-primary" />
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground uppercase tracking-wider">Email corporativo</p>
-                      <p className="font-medium text-primary">ventas@daynamex.mx</p>
+                      <p className="font-medium text-primary">ventas@Dynamex.mx</p>
                     </div>
                   </a>
                   <a
@@ -503,13 +503,13 @@ export function Distributor() {
                         </FormField>
 
                         <div className="p-4 bg-primary/5 border border-primary/20 rounded-lg text-sm text-muted-foreground">
-                          Al enviar esta solicitud, nuestro equipo comercial Daynamex revisará tu perfil en un plazo de 24–48 horas hábiles y se pondrá en contacto vía email o WhatsApp para continuar el proceso.
+                          Al enviar esta solicitud, nuestro equipo comercial Dynamex revisará tu perfil en un plazo de 24–48 horas hábiles y se pondrá en contacto vía email o WhatsApp para continuar el proceso.
                         </div>
 
                         {mutation.isError && (
                           <div className="flex items-center gap-2 p-4 bg-destructive/10 border border-destructive/30 rounded-md text-sm text-destructive">
                             <AlertCircle className="w-4 h-4 shrink-0" />
-                            Error al enviar la solicitud. Por favor intenta de nuevo o escríbenos a ventas@daynamex.mx
+                            Error al enviar la solicitud. Por favor intenta de nuevo o escríbenos a ventas@Dynamex.mx
                           </div>
                         )}
 
@@ -540,7 +540,7 @@ export function Distributor() {
                   "Empresa constituida legalmente con actividad comercial activa en el sector automotriz",
                   "Capacidad de compra mínima de 50 unidades mensuales (negociable según región)",
                   "Punto de venta físico, taller mecánico o canal de distribución establecido",
-                  "Equipo técnico disponible para capacitación Daynamex",
+                  "Equipo técnico disponible para capacitación Dynamex",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-muted-foreground">
                     <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
@@ -553,7 +553,7 @@ export function Distributor() {
             {/* Bottom CTA links */}
             <div className="mt-6 text-center text-sm text-muted-foreground">
               ¿Tienes dudas? Escríbenos a{" "}
-              <a href="mailto:ventas@daynamex.mx" className="text-primary hover:underline">ventas@daynamex.mx</a>
+              <a href="mailto:ventas@Dynamex.mx" className="text-primary hover:underline">ventas@Dynamex.mx</a>
               {" "}o llama al{" "}
               <a href="tel:+525521787771" className="text-primary hover:underline">+52 55 2178 7771</a>
             </div>

@@ -1,7 +1,10 @@
 // [Zenith Safe-Code Protocol Active]
 import { Router } from "express";
-import { eq } from "drizzle-orm";
-import { db, productsTable } from "@workspace/db";
+import {
+  listProducts,
+  listFeaturedProducts,
+  getProduct,
+} from "@workspace/db";
 import {
   ListProductsQueryParams,
   GetProductParams,
@@ -17,7 +20,7 @@ router.get("/", async (req, res) => {
       return;
     }
 
-    let rows = await db.select().from(productsTable);
+    let rows = await listProducts();
 
     if (query.data.category) {
       rows = rows.filter((r) => r.category === query.data.category);
@@ -26,8 +29,8 @@ router.get("/", async (req, res) => {
       const brand = query.data.brand.toLowerCase();
       rows = rows.filter((r) =>
         (r.compatibleBrands as string[]).some((b) =>
-          b.toLowerCase().includes(brand)
-        )
+          b.toLowerCase().includes(brand),
+        ),
       );
     }
 
@@ -40,11 +43,7 @@ router.get("/", async (req, res) => {
 
 router.get("/featured", async (req, res) => {
   try {
-    const rows = await db
-      .select()
-      .from(productsTable)
-      .where(eq(productsTable.isFeatured, true));
-
+    const rows = await listFeaturedProducts();
     res.json(rows);
   } catch (err) {
     req.log.error({ err }, "Error getting featured products");
@@ -60,10 +59,7 @@ router.get("/:id", async (req, res) => {
       return;
     }
 
-    const [row] = await db
-      .select()
-      .from(productsTable)
-      .where(eq(productsTable.id, params.data.id));
+    const row = await getProduct(params.data.id);
 
     if (!row) {
       res.status(404).json({ error: "Product not found" });

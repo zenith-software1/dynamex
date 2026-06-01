@@ -326,6 +326,29 @@ export async function customFetch<T = unknown>(
   input: RequestInfo | URL,
   options: CustomFetchOptions = {},
 ): Promise<T> {
+  const { isMockApiEnabled, mockFetch } = await import("./mock-api");
+  if (isMockApiEnabled()) {
+    input = applyBaseUrl(input);
+    const method = resolveMethod(input, options.method);
+    const headers = mergeHeaders(
+      isRequest(input) ? input.headers : undefined,
+      options.headers,
+    );
+    const response = await mockFetch(input, { ...options, method, headers });
+    if (!response.ok) {
+      const errorData = await parseErrorBody(response, method);
+      throw new ApiError(response, errorData, {
+        method,
+        url: resolveUrl(input),
+      });
+    }
+    return (await parseSuccessBody(
+      response,
+      options.responseType ?? "auto",
+      { method, url: resolveUrl(input) },
+    )) as T;
+  }
+
   input = applyBaseUrl(input);
   const { responseType = "auto", headers: headersInit, ...init } = options;
 

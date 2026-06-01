@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: dynamex
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: BASE_PATH
+        value: /

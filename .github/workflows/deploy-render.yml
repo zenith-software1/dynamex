@@ -1,0 +1,14 @@
+name: Trigger Render deploy
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ secrets.RENDER_DEPLOY_HOOK != '' }}
+    steps:
+      - name: Deploy to Render
+        run: curl -fsS -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"

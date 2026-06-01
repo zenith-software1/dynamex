@@ -15,9 +15,9 @@ const FLAG_EMOJI: Record<string, string> = {
 };
 
 const FACEBOOK_PAGES = [
-  { label: "Daynamex Santa Lucía CDMX", url: "https://www.facebook.com/share/1EUhB1Vj8q/" },
-  { label: "Daynamex Tlalnepantla", url: "https://www.facebook.com/share/1AN2qzLNWe/" },
-  { label: "Daynamex México Oficial", url: "https://www.facebook.com/share/18b8NmqeMx/" },
+  { label: "Dynamex Santa Lucía CDMX", url: "https://www.facebook.com/share/1EUhB1Vj8q/" },
+  { label: "Dynamex Tlalnepantla", url: "https://www.facebook.com/share/1AN2qzLNWe/" },
+  { label: "Dynamex México Oficial", url: "https://www.facebook.com/share/18b8NmqeMx/" },
 ];
 
 const CENTROAMERICA_COVERAGE = [
@@ -68,7 +68,7 @@ export function Regions() {
               <span className="text-primary">Latinoamérica</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl">
-              Daynamex opera con fábrica en México, hub regional en Costa Rica y distribución directa en Colombia, Ecuador y toda Centroamérica.
+              Dynamex opera con fábrica en México, hub regional en Costa Rica y distribución directa en Colombia, Ecuador y toda Centroamérica.
             </p>
           </motion.div>
 
@@ -260,8 +260,8 @@ export function Regions() {
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg">
                 <Mail className="w-3.5 h-3.5 text-primary" />
-                <a href="mailto:cr@daynamex.mx" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
-                  cr@daynamex.mx
+                <a href="mailto:cr@Dynamex.mx" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+                  cr@Dynamex.mx
                 </a>
               </div>
             </div>
@@ -337,14 +337,14 @@ export function Regions() {
               ¿Listo para distribuir en tu región?
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-              Aplica como distribuidor mayorista y empieza a vender productos Daynamex en tu mercado. Proceso rápido, soporte desde el primer día.
+              Aplica como distribuidor mayorista y empieza a vender productos Dynamex en tu mercado. Proceso rápido, soporte desde el primer día.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="font-bold uppercase tracking-wider py-6 px-10">
                 <Link href="/distribuidor">Aplicar como Distribuidor</Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="border-white/20 py-6 px-10">
-                <a href="mailto:ventas@daynamex.mx">ventas@daynamex.mx</a>
+                <a href="mailto:ventas@Dynamex.mx">ventas@Dynamex.mx</a>
               </Button>
             </div>
           </motion.div>

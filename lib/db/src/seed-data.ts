@@ -1,0 +1,176 @@
+import type { Product } from "./schema/products";
+import type { Region } from "./schema/regions";
+import type { Distributor } from "./schema/distributors";
+
+export const SEED_REGIONS: Omit<Region, "id">[] = [
+  {
+    code: "CR",
+    name: "Costa Rica",
+    currency: "CRC",
+    phone: "+506 8800 2090",
+    email: "cr@dynamex.mx",
+    address: "Zona Franca Coyol, Alajuela, Costa Rica",
+    whatsapp: "50688002090",
+    distributionTime: "24–48 hrs",
+    isActive: true,
+  },
+  {
+    code: "CO",
+    name: "Colombia",
+    currency: "COP",
+    phone: "+57 310 555 0192",
+    email: "colombia@dynamex.mx",
+    address: "Bogotá D.C., Colombia",
+    whatsapp: "573105550192",
+    distributionTime: "3–5 días hábiles",
+    isActive: true,
+  },
+  {
+    code: "EC",
+    name: "Ecuador",
+    currency: "USD",
+    phone: "+593 99 555 0174",
+    email: "ecuador@dynamex.mx",
+    address: "Quito, Pichincha, Ecuador",
+    whatsapp: "593995550174",
+    distributionTime: "3–5 días hábiles",
+    isActive: true,
+  },
+];
+
+export const SEED_PRODUCTS: Omit<Product, "id">[] = [
+  {
+    name: "Convertidor Universal Euro 4",
+    sku: "DMX-CAT-E4-001",
+    category: "convertidor_catalitico",
+    description:
+      "Convertidor catalítico de cerámica de alto flujo para motor 4 cilindros. Certificación Euro 4.",
+    technicalSpecs: {
+      material: "Cerámica 400 cpsi",
+      longitud: "12 pulgadas",
+      diametro: "4 pulgadas",
+      emisiones: "Euro 4",
+    },
+    compatibleBrands: ["Nissan", "Toyota", "Honda", "Mazda"],
+    certifications: ["Euro 4", "EPA Tier 2"],
+    imageUrl: null,
+    isFeatured: true,
+  },
+  {
+    name: "Convertidor Pickup Diesel DPF",
+    sku: "DMX-DPF-002",
+    category: "convertidor_catalitico",
+    description:
+      "Filtro de partículas diesel (DPF) para pickups 2.5L–3.0L. Regeneración activa compatible.",
+    technicalSpecs: {
+      material: "Filtro cerámico cordierita",
+      aplicacion: "Diesel 2.5L–3.0L",
+      emisiones: "Euro 5",
+    },
+    compatibleBrands: ["Ford", "Chevrolet", "RAM", "Mitsubishi"],
+    certifications: ["Euro 5"],
+    imageUrl: null,
+    isFeatured: true,
+  },
+  {
+    name: "Sistema Escape Completo Inox",
+    sku: "DMX-ESC-003",
+    category: "sistema_escape",
+    description:
+      "Línea de escape completa en acero inoxidable 304. Incluye silenciador deportivo y abrazaderas.",
+    technicalSpecs: {
+      material: "Acero inoxidable 304",
+      garantia: "3 años",
+    },
+    compatibleBrands: ["Volkswagen", "Seat", "Audi"],
+    certifications: ["ISO 9001"],
+    imageUrl: null,
+    isFeatured: true,
+  },
+  {
+    name: "Convertidor Compacto 3 Cilindros",
+    sku: "DMX-CAT-C3-004",
+    category: "convertidor_catalitico",
+    description: "Diseño compacto para vehículos urbanos 3 cilindros y híbridos ligeros.",
+    technicalSpecs: {
+      material: "Metal sustrato",
+      emisiones: "Euro 5",
+    },
+    compatibleBrands: ["Suzuki", "Hyundai", "Kia"],
+    certifications: ["Euro 5"],
+    imageUrl: null,
+    isFeatured: false,
+  },
+  {
+    name: "Silenciador Deportivo Oval",
+    sku: "DMX-SIL-005",
+    category: "sistema_escape",
+    description: "Silenciador de alto flujo con acabado cromado. Reducción de backpressure del 35%.",
+    technicalSpecs: {
+      material: "Acero aluminizado",
+      entrada: "2.5 pulgadas",
+    },
+    compatibleBrands: ["Universal"],
+    certifications: [],
+    imageUrl: null,
+    isFeatured: false,
+  },
+  {
+    name: "Convertidor Euro 6 Premium",
+    sku: "DMX-CAT-E6-006",
+    category: "convertidor_catalitico",
+    description:
+      "Máxima eficiencia de conversión para flotas comerciales. Cumple normativa Euro 6 más reciente.",
+    technicalSpecs: {
+      material: "Cerámica 600 cpsi",
+      emisiones: "Euro 6",
+      eficiencia: "98% CO / 95% HC",
+    },
+    compatibleBrands: ["Mercedes-Benz", "BMW", "Volvo"],
+    certifications: ["Euro 6", "CARB"],
+    imageUrl: null,
+    isFeatured: false,
+  },
+];
+
+export const SEED_DISTRIBUTORS: Omit<Distributor, "id" | "createdAt">[] = [
+  {
+    companyName: "AutoPartes del Valle S.A.",
+    contactName: "Carlos Méndez",
+    email: "carlos@autopartesvalle.cr",
+    phone: "+506 8888 1234",
+    country: "Costa Rica",
+    city: "San José",
+    businessType: "mayorista",
+    estimatedMonthlyVolume: "500_1000",
+    taxId: "3-101-123456",
+    message: null,
+    status: "approved",
+  },
+  {
+    companyName: "Repuestos Andinos Ltda.",
+    contactName: "María Rodríguez",
+    email: "maria@repuestosandinos.co",
+    phone: "+57 300 555 7890",
+    country: "Colombia",
+    city: "Medellín",
+    businessType: "distribuidor",
+    estimatedMonthlyVolume: "1000_plus",
+    taxId: "900123456-1",
+    message: null,
+    status: "approved",
+  },
+  {
+    companyName: "MotoEscape Ecuador",
+    contactName: "Luis Torres",
+    email: "luis@motoescape.ec",
+    phone: "+593 99 123 4567",
+    country: "Ecuador",
+    city: "Guayaquil",
+    businessType: "taller",
+    estimatedMonthlyVolume: "100_500",
+    taxId: null,
+    message: null,
+    status: "pending",
+  },
+];
