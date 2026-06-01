@@ -41,17 +41,15 @@ jobs:
 
       - name: SPA fallback for GitHub Pages
         run: |
-          if [ -f scripts/dist/index.html ]; then
-            cp scripts/dist/index.html scripts/dist/404.html
-          elif [ -f artifacts/catalytic-hub/dist/public/index.html ]; then
+          if [ -f artifacts/catalytic-hub/dist/public/index.html ]; then
             cp artifacts/catalytic-hub/dist/public/index.html artifacts/catalytic-hub/dist/public/404.html
           fi
 
-      - name: Upload Artifacts
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: scripts/dist
-
+          path: artifacts/catalytic-hub/dist/public
+          
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -61,4 +59,3 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
-        
