@@ -1,3 +1,4 @@
+# [Zenith Safe-Code Protocol Active]
 name: Deploy GitHub Pages
 
 on:
@@ -34,16 +35,22 @@ jobs:
 
       - name: Build static site
         env:
-          BASE_PATH: /dynamex/
+          BASE_PATH: /
           VITE_MOCK_API: "true"
         run: pnpm --filter @workspace/catalytic-hub run build
 
       - name: SPA fallback for GitHub Pages
-        run: cp artifacts/catalytic-hub/dist/public/index.html artifacts/catalytic-hub/dist/public/404.html
+        run: |
+          if [ -f scripts/dist/index.html ]; then
+            cp scripts/dist/index.html scripts/dist/404.html
+          elif [ -f artifacts/catalytic-hub/dist/public/index.html ]; then
+            cp artifacts/catalytic-hub/dist/public/index.html artifacts/catalytic-hub/dist/public/404.html
+          fi
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: artifacts/catalytic-hub/dist/public
+          path: scripts/dist
 
   deploy:
     needs: build
@@ -54,3 +61,4 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        
