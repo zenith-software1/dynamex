@@ -1,0 +1,73 @@
+uploads = []
+
+[[generated]]
+id = "Bari4EbTxNWW_i2b0q_MQ"
+uri = "file://artifacts/catalytic-hub/public/images/factory-hero.png"
+type = "image"
+title = "Industrial factory floor hero"
+
+[[generated]]
+id = "X0qxPM0Y-7FScxL30Cyba"
+uri = "file://artifacts/catalytic-hub/public/images/catalytic-converter.png"
+type = "image"
+title = "Catalytic converter product"
+
+[[generated]]
+id = "GCvaAR8sEmWINNiVuukBN"
+uri = "file://artifacts/catalytic-hub/public/images/exhaust-pipe.png"
+type = "image"
+title = "Exhaust pipe product"
+
+[[generated]]
+id = "-lZ2hifNPdsEHYboEBcpe"
+uri = "file://artifacts/catalytic-hub/public/images/distribution-network.png"
+type = "image"
+title = "Latin America distribution network"
+
+[[generated]]
+id = "lE58Qekg6k0pVcSghehSC"
+uri = "file://artifacts/catalytic-hub/public/images/welding-detail.png"
+type = "image"
+title = "Welding automotive parts"
+
+[[generated]]
+id = "fljhYgWzvQ0p95rDC69wy"
+uri = "file://artifacts/catalytic-hub/public/images/products/cm-400.png"
+type = "image"
+title = "universal catalytic converter studio"
+
+[[generated]]
+id = "OJes6lVdJ97zxDMRPiGFs"
+uri = "file://artifacts/catalytic-hub/public/images/products/cm-600.png"
+type = "image"
+title = "high performance catalytic converter"
+
+[[generated]]
+id = "s8DiZBGy1Bzu2F-4WX2o6"
+uri = "file://artifacts/catalytic-hub/public/images/products/cm-flex-200.png"
+type = "image"
+title = "flexible exhaust pipe connector"
+
+[[generated]]
+id = "SHNTx4CvqwWcTGTpeWnRD"
+uri = "file://artifacts/catalytic-hub/public/images/products/cm-sil-300.png"
+type = "image"
+title = "rear muffler silencer stainless"
+
+[[generated]]
+id = "vBPhA9eOWmvSZ5ne_2OUw"
+uri = "file://artifacts/catalytic-hub/public/images/products/cm-pipe-25.png"
+type = "image"
+title = "intermediate exhaust pipe steel"
+
+[[generated]]
+id = "D5f_rI448NZkfb9Q16d2s"
+uri = "file://artifacts/catalytic-hub/public/images/products/cm-d300.png"
+type = "image"
+title = "diesel catalytic converter DPF"
+
+[[outputs]]
+id = "k3txpqXh-QI5xTrENtu-1"
+uri = "file://artifacts/catalytic-hub/public/daynamex-sitio.zip"
+type = "unspecified"
+title = "Daynamex — Código fuente del sitio"
