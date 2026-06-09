@@ -1,0 +1,23 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="420" rx="28" fill="#0f1318"/>
+  <rect x="34" y="34" width="572" height="352" rx="24" fill="url(#bg)" stroke="#2a3038"/>
+  <path d="M118 214h92" stroke="#8b949e" stroke-width="32" stroke-linecap="round"/>
+  <path d="M430 214h92" stroke="#8b949e" stroke-width="32" stroke-linecap="round"/>
+  <path d="M214 145c0-22 18-40 40-40h132c22 0 40 18 40 40v138c0 22-18 40-40 40H254c-22 0-40-18-40-40V145Z" fill="url(#metal)" stroke="#f59e0b" stroke-width="4"/>
+  <path d="M258 129h124c11 0 20 9 20 20v130c0 11-9 20-20 20H258c-11 0-20-9-20-20V149c0-11 9-20 20-20Z" fill="#1f252d" opacity=".35"/>
+  <path d="M274 154h92M274 184h92M274 214h92M274 244h92M274 274h92" stroke="#fbbf24" stroke-opacity=".45" stroke-width="6" stroke-linecap="round"/>
+  <path d="M116 252h404" stroke="#ffffff" stroke-opacity=".06" stroke-width="2"/>
+  <text x="72" y="74" fill="#f59e0b" font-family="Arial, sans-serif" font-size="24" font-weight="700">DYNAMEX</text>
+  <text x="72" y="104" fill="#d1d5db" font-family="Arial, sans-serif" font-size="14" letter-spacing="3">CONVERTIDOR CATALITICO</text>
+  <defs>
+    <linearGradient id="bg" x1="34" y1="34" x2="606" y2="386" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#050507"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="214" y1="105" x2="426" y2="323" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d1d5db"/>
+      <stop offset=".42" stop-color="#6b7280"/>
+      <stop offset="1" stop-color="#e5e7eb"/>
+    </linearGradient>
+  </defs>
+</svg>

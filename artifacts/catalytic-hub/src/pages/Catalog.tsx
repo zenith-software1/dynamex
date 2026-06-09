@@ -1,10 +1,21 @@
 // [Zenith Safe-Code Protocol Active]
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Search, Filter, Factory, ChevronDown, ChevronUp, X } from "lucide-react";
+import {
+  Search,
+  Filter,
+  Factory,
+  ChevronDown,
+  ChevronUp,
+  X,
+  ShoppingCart,
+  Plus,
+  Minus,
+  MessageCircle,
+  Send,
+} from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   useListProducts,
@@ -23,6 +34,8 @@ const BRANDS = [
   "Toyota", "Honda", "Chevrolet", "Nissan", "Hyundai",
   "Kia", "Ford", "Volkswagen", "Mazda", "Dodge", "Isuzu", "Hino",
 ];
+
+const WHATSAPP_NUMBER = "525521787771";
 
 const CERT_COLORS: Record<string, string> = {
   "EPA": "bg-green-900/60 text-green-300 border-green-700/50",
@@ -50,6 +63,10 @@ function SpecTable({ specs }: { specs: Record<string, string> | null }) {
   );
 }
 
+function normalizeArray(value: unknown): string[] {
+  return Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
+}
+
 type ProductItem = {
   id: number;
   name: string;
@@ -63,10 +80,45 @@ type ProductItem = {
   isFeatured: boolean;
 };
 
-function ProductCard({ product, index }: { product: ProductItem; index: number }) {
+type QuoteItem = {
+  product: ProductItem;
+  quantity: number;
+};
+
+function buildQuoteUrl(items: QuoteItem[]) {
+  const lines = items.map(
+    ({ product, quantity }) => `- ${quantity}x ${product.name} (${product.sku})`
+  );
+  const message = [
+    "Hola Dynamex, quiero cotizar estas piezas:",
+    "",
+    ...lines,
+    "",
+    "Me pueden confirmar precio mayorista, disponibilidad y compatibilidad?",
+  ].join("\n");
+
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+function ProductCard({
+  product,
+  index,
+  quoteQuantity,
+  onAdd,
+  onRemove,
+}: {
+  product: ProductItem;
+  index: number;
+  quoteQuantity: number;
+  onAdd: (product: ProductItem) => void;
+  onRemove: (productId: number) => void;
+}) {
   const [expanded, setExpanded] = useState(false);
 
   const categoryLabel = CATEGORIES.find(c => c.value === product.category)?.label ?? product.category;
+  const compatibleBrands = normalizeArray(product.compatibleBrands);
+  const certifications = normalizeArray(product.certifications);
+  const singleQuoteUrl = buildQuoteUrl([{ product, quantity: Math.max(quoteQuantity, 1) }]);
 
   return (
     <motion.div
@@ -75,7 +127,7 @@ function ProductCard({ product, index }: { product: ProductItem; index: number }
       viewport={{ once: true }}
       transition={{ delay: (index % 3) * 0.08 }}
     >
-      <Card className="bg-card/60 border-white/5 hover:border-primary/40 transition-all duration-300 overflow-hidden group">
+      <Card className="bg-card/60 border-white/5 hover:border-primary/40 transition-all duration-300 overflow-hidden group h-full">
         {/* Product image / placeholder */}
         <div className="aspect-video bg-gradient-to-br from-black to-card relative overflow-hidden">
           {product.imageUrl ? (
@@ -108,18 +160,18 @@ function ProductCard({ product, index }: { product: ProductItem; index: number }
           <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">{product.description}</p>
 
           {/* Compatible brands */}
-          {(product.compatibleBrands as string[]).length > 0 && (
+          {compatibleBrands.length > 0 && (
             <div>
               <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Compatible con</p>
               <div className="flex flex-wrap gap-1">
-                {(product.compatibleBrands as string[]).slice(0, 5).map((b) => (
+                {compatibleBrands.slice(0, 5).map((b) => (
                   <span key={b} className="text-xs px-2 py-0.5 rounded-sm bg-white/5 border border-white/10 text-muted-foreground">
                     {b}
                   </span>
                 ))}
-                {(product.compatibleBrands as string[]).length > 5 && (
+                {compatibleBrands.length > 5 && (
                   <span className="text-xs px-2 py-0.5 rounded-sm bg-white/5 border border-white/10 text-muted-foreground">
-                    +{(product.compatibleBrands as string[]).length - 5} más
+                    +{compatibleBrands.length - 5} más
                   </span>
                 )}
               </div>
@@ -127,9 +179,9 @@ function ProductCard({ product, index }: { product: ProductItem; index: number }
           )}
 
           {/* Certifications */}
-          {(product.certifications as string[]).length > 0 && (
+          {certifications.length > 0 && (
             <div className="flex flex-wrap gap-1.5">
-              {(product.certifications as string[]).map((cert) => (
+              {certifications.map((cert) => (
                 <span
                   key={cert}
                   className={`text-xs px-2 py-0.5 rounded-sm border font-bold ${CERT_COLORS[cert] ?? "bg-white/5 border-white/20 text-muted-foreground"}`}
@@ -139,6 +191,44 @@ function ProductCard({ product, index }: { product: ProductItem; index: number }
               ))}
             </div>
           )}
+
+          {/* Quote actions */}
+          <div className="grid grid-cols-[1fr,auto] gap-2 pt-2">
+            <Button onClick={() => onAdd(product)} className="font-bold">
+              <ShoppingCart className="w-4 h-4 mr-2" />
+              {quoteQuantity > 0 ? `En cotización (${quoteQuantity})` : "Agregar a cotización"}
+            </Button>
+            {quoteQuantity > 0 && (
+              <div className="flex items-center rounded-md border border-white/10 overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => onRemove(product.id)}
+                  className="h-10 w-9 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-white/10 transition-colors"
+                  aria-label={`Quitar ${product.name} de la cotización`}
+                >
+                  <Minus className="w-4 h-4" />
+                </button>
+                <span className="h-10 min-w-8 px-2 flex items-center justify-center text-sm font-bold text-white border-x border-white/10">
+                  {quoteQuantity}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => onAdd(product)}
+                  className="h-10 w-9 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-white/10 transition-colors"
+                  aria-label={`Agregar otra unidad de ${product.name}`}
+                >
+                  <Plus className="w-4 h-4" />
+                </button>
+              </div>
+            )}
+          </div>
+
+          <Button variant="outline" asChild className="w-full border-green-700/40 text-green-400 hover:bg-green-700/20 hover:text-green-300">
+            <a href={singleQuoteUrl} target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="w-4 h-4 mr-2" />
+              Cotizar esta pieza por WhatsApp
+            </a>
+          </Button>
 
           {/* Expandable specs */}
           <button
@@ -170,6 +260,7 @@ export function Catalog() {
   const [brand, setBrand] = useState("");
   const [search, setSearch] = useState("");
   const [showFilters, setShowFilters] = useState(false);
+  const [quoteItems, setQuoteItems] = useState<Record<number, QuoteItem>>({});
 
   const params = {
     ...(category ? { category } : {}),
@@ -181,12 +272,55 @@ export function Catalog() {
   });
 
   const filtered = search.trim()
-    ? products.filter(
-        (p) =>
-          p.name.toLowerCase().includes(search.toLowerCase()) ||
-          p.sku.toLowerCase().includes(search.toLowerCase())
-      )
+    ? products.filter((p) => {
+        const searchable = [
+          p.name,
+          p.sku,
+          p.description,
+          ...normalizeArray(p.compatibleBrands),
+          ...Object.values((p.technicalSpecs as Record<string, string> | null) ?? {}),
+        ]
+          .join(" ")
+          .toLowerCase();
+
+        return searchable.includes(search.toLowerCase());
+      })
     : products;
+
+  const quoteList = Object.values(quoteItems);
+  const quoteCount = quoteList.reduce((total, item) => total + item.quantity, 0);
+  const quoteUrl = buildQuoteUrl(quoteList);
+
+  const addToQuote = (product: ProductItem) => {
+    setQuoteItems((current) => ({
+      ...current,
+      [product.id]: {
+        product,
+        quantity: (current[product.id]?.quantity ?? 0) + 1,
+      },
+    }));
+  };
+
+  const removeFromQuote = (productId: number) => {
+    setQuoteItems((current) => {
+      const existing = current[productId];
+      if (!existing) return current;
+
+      if (existing.quantity <= 1) {
+        const next = { ...current };
+        delete next[productId];
+        return next;
+      }
+
+      return {
+        ...current,
+        [productId]: {
+          ...existing,
+          quantity: existing.quantity - 1,
+        },
+      };
+    });
+  };
 
   return (
     <PageLayout>
@@ -199,9 +333,22 @@ export function Catalog() {
               Ingeniería de<br />
               <span className="text-primary">Alta Precisión</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl">
+            <p className="text-xl text-muted-foreground max-w-2xl mb-8">
               Especificaciones técnicas completas, compatibilidades y certificaciones ambientales para cada producto de nuestra línea de fabricación.
             </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl">
+              {[
+                ["18+", "SKUs activos"],
+                ["4", "familias de producto"],
+                ["WhatsApp", "cotización directa"],
+                ["B2B", "precio por volumen"],
+              ].map(([value, label]) => (
+                <div key={label} className="bg-white/5 border border-white/10 rounded-lg px-4 py-3">
+                  <p className="font-display font-bold text-primary text-2xl">{value}</p>
+                  <p className="text-xs uppercase tracking-wider text-muted-foreground">{label}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -334,12 +481,50 @@ export function Catalog() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filtered.map((product, i) => (
-                <ProductCard key={product.id} product={product} index={i} />
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  index={i}
+                  quoteQuantity={quoteItems[product.id]?.quantity ?? 0}
+                  onAdd={addToQuote}
+                  onRemove={removeFromQuote}
+                />
               ))}
             </div>
           )}
         </div>
       </section>
+
+      {quoteCount > 0 && (
+        <div className="fixed inset-x-0 bottom-0 z-50 border-t border-primary/30 bg-background/95 backdrop-blur-xl">
+          <div className="container mx-auto px-4 md:px-8 py-4 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
+                <ShoppingCart className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <p className="font-display font-bold text-white">
+                  {quoteCount} pieza{quoteCount !== 1 ? "s" : ""} en cotización
+                </p>
+                <p className="text-xs text-muted-foreground line-clamp-1">
+                  {quoteList.map((item) => `${item.quantity}x ${item.product.sku}`).join(" · ")}
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-2">
+              <Button variant="outline" onClick={() => setQuoteItems({})} className="border-white/20">
+                Limpiar
+              </Button>
+              <Button asChild className="font-bold">
+                <a href={quoteUrl} target="_blank" rel="noopener noreferrer">
+                  <Send className="w-4 h-4 mr-2" />
+                  Enviar cotización
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </PageLayout>
   );
 }
