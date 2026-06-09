@@ -1,0 +1,24 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="420" rx="28" fill="#0f1318"/>
+  <rect x="34" y="34" width="572" height="352" rx="24" fill="url(#bg)" stroke="#2a3038"/>
+  <path d="M105 210h100M435 210h100" stroke="#8b949e" stroke-width="30" stroke-linecap="round"/>
+  <rect x="196" y="124" width="248" height="172" rx="62" fill="url(#metal)" stroke="#f59e0b" stroke-width="4"/>
+  <rect x="226" y="152" width="188" height="116" rx="28" fill="#10151c" opacity=".46"/>
+  <g stroke="#fbbf24" stroke-opacity=".55" stroke-width="4">
+    <path d="M255 158v104M285 158v104M315 158v104M345 158v104M375 158v104"/>
+    <path d="M238 180h164M238 210h164M238 240h164"/>
+  </g>
+  <text x="72" y="74" fill="#f59e0b" font-family="Arial, sans-serif" font-size="24" font-weight="700">DYNAMEX</text>
+  <text x="72" y="104" fill="#d1d5db" font-family="Arial, sans-serif" font-size="14" letter-spacing="3">DPF DIESEL</text>
+  <defs>
+    <linearGradient id="bg" x1="34" y1="34" x2="606" y2="386" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#050507"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="196" y1="124" x2="444" y2="296" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f3f4f6"/>
+      <stop offset=".5" stop-color="#6b7280"/>
+      <stop offset="1" stop-color="#d1d5db"/>
+    </linearGradient>
+  </defs>
+</svg>
