@@ -392,5 +392,5 @@ export async function mockFetch(
 }
 
 export function isMockApiEnabled(): boolean {
-  return import.meta.env.VITE_MOCK_API === "true";
+  return (import.meta as ImportMeta & { env?: Record<string, string | undefined> }).env?.VITE_MOCK_API === "true";
 }
